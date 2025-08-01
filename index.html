@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>L'Oréal | Smart Routine &amp; Product Advisor</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Trade+Gothic+LT+Std:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -19,14 +19,98 @@
     <div class="page-wrapper">
       <!------- Header / Branding ------->
       <header class="site-header">
-        <img src="img/loreal-logo.png" alt="L'Oréal Logo" class="logo" />
+        <div class="ring-1 gold-ring"></div>
+        <div class="ring-2 gold-ring"></div>
+        <div class="ring-3 gold-ring"></div>
+        <div class="ring-4 gold-ring"></div>
+        <div class="ring-5 gold-ring"></div>
+        <div class="ring-6 gold-ring"></div>
+        <div class="ring-7 gold-ring"></div>
+        <img src="img/IMG_0004.png" alt="L'Oréal Logo" class="logo" />
         <h1 class="site-title">Smart Routine &amp; Product Advisor</h1>
       </header>
 
-      <!-- Category Filter -->
+      <main>
+        <!-- Face Selection Interface -->
+        <section id="faceSelection" class="face-selection">
+          <h2 class="selection-title">What area would you like to focus on?</h2>
+          <p class="selection-subtitle">
+            Click on the area of your face you'd like to improve
+          </p>
+
+          <div class="face-map-container">
+            <div class="face-outline">
+              <!-- Clickable face areas with correct positioning and data -->
+              <button
+                class="face-area forehead"
+                data-area="forehead"
+                title="Forehead"
+              >
+                <span class="area-label">Forehead</span>
+              </button>
+
+              <button class="face-area eyes" data-area="eyes" title="Eye Area">
+                <span class="area-label">Eyes</span>
+              </button>
+
+              <button class="face-area nose" data-area="nose" title="Nose">
+                <span class="area-label">Nose</span>
+              </button>
+
+              <button
+                class="face-area left-cheek"
+                data-area="cheeks"
+                title="Left Cheek"
+              >
+                <span class="area-label">Cheek</span>
+              </button>
+
+              <button
+                class="face-area right-cheek"
+                data-area="cheeks"
+                title="Right Cheek"
+              >
+                <span class="area-label">Cheek</span>
+              </button>
+
+              <button class="face-area lips" data-area="lips" title="Lips">
+                <span class="area-label">Lips</span>
+              </button>
+
+              <button class="face-area chin" data-area="chin" title="Chin">
+                <span class="area-label">Chin</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="alternative-options">
+            <p>Or tell us about your skin concerns:</p>
+            <button class="concern-btn" data-concern="acne">Acne</button>
+            <button class="concern-btn" data-concern="aging">Anti-Aging</button>
+            <button class="concern-btn" data-concern="dryness">Dry Skin</button>
+            <button class="concern-btn" data-concern="oily">Oily Skin</button>
+            <button class="concern-btn" data-concern="sensitive">
+              Sensitive Skin
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <!-- Category Filter and Search -->
       <div class="search-section">
+        <!-- Product Search Input -->
+        <input
+          type="text"
+          id="productSearch"
+          placeholder="Search products by name or keyword..."
+          class="search-input"
+        />
+
+        <!-- Category Dropdown -->
         <select id="categoryFilter">
-          <option value="" disabled selected>Choose a Category</option>
+          <option value="" disabled selected style="color: #ff003b">
+            Choose a Category
+          </option>
           <option value="cleanser">Cleansers</option>
           <option value="moisturizer">Moisturizers & Treatments</option>
           <option value="haircare">Haircare</option>
@@ -37,6 +121,16 @@
           <option value="suncare">Suncare</option>
           <option value="fragrance">Fragrance</option>
         </select>
+
+        <!-- Clear Search Button -->
+        <button
+          type="button"
+          id="clearSearchBtn"
+          class="clear-search-btn"
+          style="display: none"
+        >
+          <i class="fa-solid fa-times"></i> Clear Search
+        </button>
       </div>
 
       <!-- Products Grid -->
